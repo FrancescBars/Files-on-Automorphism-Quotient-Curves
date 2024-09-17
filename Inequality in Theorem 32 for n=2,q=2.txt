@@ -534,6 +534,8 @@ FpnpointsQuotientCurve:=FpnpointsforQuotientcurveX0NWN(M,q,HH1[2],HH1[3],bound);
 //print FpnpointsQuotientCurve;
 degree:=n;
 NondegreedmaptoP1:=MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve);
+// The command NondegreedmaptoP1 list if any of the set (q^k, z) k<bound such that |X_0(M)/W(F_{q^n})|-degree*|P^1(F_{q^k})|=z, where z is a positive integer. Thus no degree map between the quotient modular curve X_0(M)/W to the projective space P^1 defined over F_{q^k}, if the list is non empty, recall q does not divide M.
+
 if #NondegreedmaptoP1 eq 0 then
 if [q,M,d] notin A1 then
 A1:=Append(A1,[q,M,d]);
