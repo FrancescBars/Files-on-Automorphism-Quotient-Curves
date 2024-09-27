@@ -571,7 +571,7 @@ if #PrimeFactors(M) le 4 then
 
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (2*n*(q^2+1)) then
 ````
-This checkes values of M which satisfies the inequality (5.47) with s=order(W)=2 (recall that q=2 and n=2).
+This checkes values of M which satisfies the inequality (5.47) with $2^s=order(W)=2$ (recall that q=2 and n=2).
 ````magma
 for d in Divisors(M) do
 if d gt 1 then 
@@ -614,7 +614,7 @@ A1 collects the values of M,W with order(W)=2 which satisfy the inequalities (5.
 if #PrimeFactors(M) in [2..4] then// since order(W)=4, M has at least 2 distinct prime divisors
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (4*n*(q^2+1)) then
 ````
-This checkes values of M which satisfies the inequality (5.47) with s=order(W)=4 (recall that q=2 and n=2).
+This checkes values of M which satisfies the inequality (5.47) with $2^s=order(W)=4$ (recall that q=2 and n=2).
 ````magma
 for d1 in Divisors(M) do
 if d1 gt 1 then
@@ -668,8 +668,11 @@ end if;
 ````
 A1 collects the values of M,W with $order(W)\in \{2,4\}$ which satisfy the inequalities (5.46), (5.47) and (5.48). We now repeat the same process for order(W)=8.
 ````magma
-if #PrimeFactors(M) in [3..4] then
+if #PrimeFactors(M) in [3..4] then// since order(W)=8, M has at least 3 distinct prime divisors
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (8*n*(q^2+1)) then
+````
+This checkes values of M which satisfies the inequality (5.47) with $2^s=order(W)=8$ (recall that q=2 and n=2).
+````magma
 for d1 in Divisors(M) do
 if d1 gt 1 then
 for d2 in Divisors(M) do
@@ -679,6 +682,9 @@ for d3 in Divisors(M) do
 if d3 gt d2 then
 if d3 notin [d1,d2,Squarefreepart(d1*d2)] then
 TN3:=[d1,d2,d3,Squarefreepart(d1*d2), Squarefreepart(d1*d3), Squarefreepart(d2*d3),Squarefreepart(d1*d2*d3),1];
+````
+Suppose W is genered by three elements $w_{d1},w_{d2},w_{d3}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}\circ w_{d}=1$, we have $W=<1,w_{d1},w_{d2},w_{d3},w_{Squarefreepart(d1\cdot d2)}, w_{Squarefreepart(d1\cdot d3)}, w_{Squarefreepart(d2\cdot d3)}, w_{Squarefreepart(d1\cdot d2 \cdot d3)}>$. Hence ``TN:=[1,d1,d2,d3,Squarefreepart(d1*d2), Squarefreepart(d1*d3), Squarefreepart(d2*d3),Squarefreepart(d1*d2*d3)]``.  
+````magma
 t3:=#TN3;
 A13:=genereX0NQuotientWN(q*M,TN3,t3);
 B13:=genereX0NQuotientWN(M,TN3,t3);
