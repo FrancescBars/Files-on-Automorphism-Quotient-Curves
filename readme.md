@@ -10,7 +10,7 @@ curve which does not have any repeated factor in the Jacobian decomposition (onc
 For few concrete non-hyperelliptic quotient modular curve
 $C:=X_0(N)/W_N$ that we used in the paper on automorphisms of quotient modular curve
  we add a file with Mathematica code where we compute
-the Petri model equation for $C$ and check if $C$ has any bielliptic
+the Petri model equation for $C$ and check if $C$ has any 
 involution or not. The usual notation for the file corresponding to
 $C$ is NW_N+some details.nb The mathematica code was running in
 Mathematica
