@@ -623,13 +623,16 @@ if d2 gt d1 then
 if d1 ne d2 then
 TN2:=[*d1,d2,Squarefreepart(d1*d2),1*];
 ````
-Suppose W is genered by two elements $w_{d1},w_{d2}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}\circ w_{d}=1$, we have $W=<1,w_{d1},w{d2},w_{Squarefreepart(d1\cdot d2)}>$. Hence ``TN:=[1,d1,d2,Squarefreepart(d1*d2)]``.  
+Suppose W is genered by two elements $w_{d1},w_{d2}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}\circ w_{d}=1$, we have $W=<1,w_{d1},w_{d2},w_{Squarefreepart(d1\cdot d2)}>$. Hence ``TN:=[1,d1,d2,Squarefreepart(d1*d2)]``.  
 ````magma
 t2:=#TN2;
 A12:=genereX0NQuotientWN(q*M,TN2,t2);
 B12:=genereX0NQuotientWN(M,TN2,t2);
 if A12 ge 2 then
 if (A12-1) ge (n*(A12-1-(2*B12))) then
+````
+This checkes the values of M and W with order(W)=4 that satisfy the inequality (5.48)
+````magma
 prec := 20; // Number of coefficients of the q-expansion
 HH2 := JacobianDecompositionQuotientX0NWN(M, TN2, prec, t2);
 //p:=2;// A prime number not dividing the level N
@@ -639,7 +642,13 @@ FpnpointsQuotientCurve:=FpnpointsforQuotientcurveX0NWN(M,q,HH2[2],HH2[3],bound);
 degree:=n;
 NondegreedmaptoP1:=MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve);
 if #NondegreedmaptoP1 eq 0 then
+````
+This checks the values of M,W with order(W)=4 which satisfy the inequality (5.46) with $\alpha<bound=20$
+````magma
 E:=[d1,d2,Squarefreepart(d1*d2)];
+````
+The value E, we just got satisfies the inequalities (5.46), (5.47) and (5.48) with order(W)=4 and W=$\langle 1,w_{d1},w_{d2},w_{Squarefreepart(d1\cdot d2)} \rangle$. We now find some suitable generators of W. Note that if e1:=min({d1,d2,Squarefreepart(d1\cdot d2)}) and e2:=min({d1,d2,Squarefreepart(d1\cdot d2)}\{e1}), then $w_{e1}$ and $w_{e2}$ generate $W$.
+````magma
 e1:=Minimum(E);
 E1:=Exclude(E,e1);
 e2:=Minimum(E1);
