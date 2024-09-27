@@ -23,6 +23,10 @@ F:=[(B[1] - B[7] + B[10]),
     (-B[2] + B[4] + 3*B[7] - B[8] - B[9]),
     (B[5] + 2*B[7] + 2*B[8] - 2*B[9] - B[10] + 2*B[11]),
     (B[6] - B[7] - B[8] + B[9])];
+````````````````
+This computes the modular forms for S_2(115)/<w_{23}>
+````magma
+
 prec:=200;
 L<q> := LaurentSeriesRing(Rationals(),prec);
 R<[x]>:=PolynomialRing(Rationals(),6);
@@ -80,8 +84,10 @@ X:=Curve(ProjectiveSpace(R),eqns);
 //X;
 
 
-````````````````
+
 Y:=ChangeRing(X,GF(2));
 if IsSingular(Y) eq false then
 #Automorphisms(Y);
 end if;
+````````````````
+This gives the order of automorphism group*****
