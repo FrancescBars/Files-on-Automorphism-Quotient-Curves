@@ -68,7 +68,7 @@ A new function
 
 
 
-´´´´´´´magma
+````magma
 
 fixedpointsALinvbig:=function(m, n)
 
