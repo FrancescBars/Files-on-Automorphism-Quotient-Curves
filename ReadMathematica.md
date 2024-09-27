@@ -78,6 +78,9 @@ t:=0;
 	until tf eq false and t eq #eqns;
 X:=Curve(ProjectiveSpace(R),eqns);
 //X;
+
+
+````````````````
 Y:=ChangeRing(X,GF(2));
 if IsSingular(Y) eq false then
 #Automorphisms(Y);
