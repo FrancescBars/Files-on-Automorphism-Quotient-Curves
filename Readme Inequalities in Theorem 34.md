@@ -552,7 +552,7 @@ return n;
 end function;
 ````
 The command ``Squarefreepart(d)`` gives the squarefree part of a natural number ``d``. 
-We are now ready to check the inequalitites (5.46),(5.47) and (5.48). We first check the inequalities for order(W)=2.
+We are now ready to check the inequalitites (5.46),(5.47) and (5.48). Recall that by the assumptions on W, we can consider W as a subgroup of B(M). We first check the inequalities for order(W)=2.
 ````magma
 
 A1:=[ ];
@@ -594,9 +594,9 @@ degree:=n;
 NondegreedmaptoP1:=MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve);
 // The command NondegreedmaptoP1 list if any of the set (q^k, z) k<bound such that |X_0(M)/W(F_{q^k})|-degree*|P^1(F_{q^k})|=z, where z is a positive integer. Thus no degree map between the quotient modular curve X_0(M)/W to the projective space P^1 defined over F_{q^k}, if the list is non empty, recall q is a prime not dividing M.
 
-if #NondegreedmaptoP1 eq 0 then\\ This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with \alpha<bound=20
+if #NondegreedmaptoP1 eq 0 then// This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with \alpha<bound=20
 ````
-This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with \alpha<bound=20
+This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with $\alpha<bound=20$
 ````magma
 if [q,M,d] notin A1 then
 A1:=Append(A1,[q,M,d]);
@@ -607,15 +607,24 @@ end if;
 end if;
 end for;
 end if;
+````
+A1 collects the values of M,W with order(W)=2 which satisfy the inequalities (5.46), (5.47) and (5.48). We now repeat the same process for order(W)=4.
+````magma
 
-if #PrimeFactors(M) in [2..4] then
+if #PrimeFactors(M) in [2..4] then// since order(W)=4, M has at least 2 distinct prime divisors
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (4*n*(q^2+1)) then
+````
+This checkes values of M which satisfies the inequality (5.47) with s=order(W)=4 (recall that q=2 and n=2).
+````magma
 for d1 in Divisors(M) do
 if d1 gt 1 then
 for d2 in Divisors(M) do
 if d2 gt d1 then
 if d1 ne d2 then
 TN2:=[*d1,d2,Squarefreepart(d1*d2),1*];
+````
+Suppose W is genered by two elements $w_{d1},w_{d2}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}*w_{d}=1$, we have $W=<1,w_{d1},w{d2},w_{Squarefreepart(d1*d2)}>$.  
+````magma
 t2:=#TN2;
 A12:=genereX0NQuotientWN(q*M,TN2,t2);
 B12:=genereX0NQuotientWN(M,TN2,t2);
