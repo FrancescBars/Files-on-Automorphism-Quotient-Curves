@@ -10,7 +10,7 @@ Then we check the inequalities (5.46), (5.47) and (5.48)  case by case i.e., fir
 
 
 
-#Example 
+##Example 
 
 First we pick different functions for computing the genus of a quotient modular curve (such Magma codes are already available in another folder in this github).
 
@@ -700,7 +700,7 @@ This checks the values of M,W with order(W)=8 which satisfy the inequality (5.46
 ````magma
 F:=[d1,d2,d3,Squarefreepart(d1*d2), Squarefreepart(d1*d3), Squarefreepart(d2*d3),Squarefreepart(d1*d2*d3)];
 ````
-The value E, we just got satisfies the inequalities (5.46), (5.47) and (5.48) with order(W)=8 and $W=<1,w_{d1},w_{d2},w_{d3},w_{Squarefreepart(d1\cdot d2)}, w_{Squarefreepart(d1\cdot d3)}, w_{Squarefreepart(d2\cdot d3)}, w_{Squarefreepart(d1\cdot d2 \cdot d3)}>$. We now find some suitable generators of W. Note that if e1:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}), e2:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}\\ {e1}) and e3:=e2:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}\\ {e1,e2}) , then $w_{e1}$, $w_{e2}$ and $w_{e3}$ generate $W$.
+The value F, we just got satisfies the inequalities (5.46), (5.47) and (5.48) with order(W)=8 and $W=<1,w_{d1},w_{d2},w_{d3},w_{Squarefreepart(d1\cdot d2)}, w_{Squarefreepart(d1\cdot d3)}, w_{Squarefreepart(d2\cdot d3)}, w_{Squarefreepart(d1\cdot d2 \cdot d3)}>$. We now find some suitable generators of W. Note that if e1:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}), e2:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}\\ {e1}) and e3:=e2:=min({d1,d2,Squarefreepart($d1\cdot d2$), Squarefreepart($d1\cdot d3$), Squarefreepart($d3\cdot d3$), Squarefreepart($d1\cdot d2\cdot d3$)}\\ {e1,e2}) , then $w_{e1}$, $w_{e2}$ and $w_{e3}$ generate $W$.
 ````magma
 f1:=Minimum(F);
 F1:=Exclude(F,f1);
