@@ -152,31 +152,31 @@ h10 = Series[f8, {q, 0, 55}];
 ```````
 
 
-Here, the decomposition of the Jacobian is
-$$1_+....$$
+Here, the decomposition of the Jacobian is:
+$$1_{E14a,f1}+1_{E21a,f2}+1_{E35a,f3}+2_{35.2.a.b,f4}+1_{E105a,f5}+2_{105.2.a.b,f6}+1_{E210d,f7}+1_{E210e,f8}$$
+where we use Cremona tables notation for elliptic curves and LNMD notation for higher dimension abelian varieties $A_f$.
 
-by use of Cremona lebels for elliptic curves and LNMD notation.
+We observe that the respective levels of the modular forms are [*14, 21, 35, 35, 105, 105, 210, 210*].
 
-observe the respective levels are [*14, 21, 35, 35, 105, 105, 210, 210*]
+Note that $f4$ and $f6$ corresponds to factors $A_f$ of dimension two, thus the modular forms $f4$, and $f6$
+are defined over quadratic fields corresponding to $P4$ and $P6$ respectively, and to obtain
+a $\mathbb{Q}$-basis for such modular forms we proceed as bellow and we obtain $f41,f42$, and $f61$, $f62$.
 
-f_4 and f_6 corresponds to factors $A_f$ of dimension two, thus the modular form
-is defined over quadratic fields corresponding to P4 and P6 respectively, and to obtain
-a Q-basis for such dimension factors we obtain f41,f42, and f61 and f61.
+After finding such basis, we need to lift $f1$ from level 14 to level 210 such that the action of the AL-involutions
+$w_{6},w_{10},w_{15}$ act as 1, and we obtain such lift by use of the operators $B_d$ following Lemma 2.1 and Prop. 2.2
+of the Bars, González paper ``Bielliptic quotient modular curves $X_0^*(N)$" (result derived from Atkin-Lehner paper ''Hecke operators").
 
-Now we need to lift f1 from level 14 to level 210 such that the action of the AL-involutions
-$w_{6},w_{10},w_{15}$ act as 1, and we lift by operators $B_d$ following Lemma 2.1 and Prop. 2.2
-following ``Bielliptic quotient modular curves $X_0^*(N)$" (which follows from Atkin-Lehner paper ''Hecke operators")
-
-This procedure to lift until level 210 we need to deal for 
-$$f_1,f_2,f_3,f_{41},f_{42},f_5,f_{61},f_{62}$$
-Once we reach level 210 but impossing such liftings that $w_{6},w_{10},w_{15}$ act as 1, we obtain the
+This procedure to lift until level 210 we need to deal for all the modular forms of the base which level is strictly lower than 210, i.e. for 
+$$f_1,f_2,f_3,f_{41},f_{42},f_5,f_{61},f_{62}.$$
+Once we reach level 210 but impossing in such liftings that $w_{6},w_{10},w_{15}$ act as 1, we obtain the
 basis of the modular forms at level 210 which we can compute the Petri model.
 
 
+We compute the canonical model (by a theorem of Petri) via solving the following linear system.
 
-We compute the canonical model (by Petri model) by solving a linear system.
+We show how obtain such canonical model in the quotient curve in the example $X_0(210)/\langle w_6, w_{10},w_{15}\rangle$.
 
-We show in the quotient curv in the example.
+
 
 ``````mathematica
 
@@ -212,17 +212,21 @@ QQ /. {x1 -> h1, x2 -> h2, x3 -> h3, x4 -> h4, x5 -> h5, x6 -> h6,
 
 ``````````````
 
-The last line should appear $0[q]^{57}$ claiming that is almost zero, i.e. that the
+The last outline line should appear $0[q]^{57}$ claiming that is almost zero, i.e. that the
 model obtained $QQ$ is zero when we substitute the variables by the basis of modular 
 forms, is particular the number of degree 2 equations in the canonical model
-are given by the free $a_{j}$ that are not fixed in Solve[l==....], in particular keepts
-are (g-2)(g-3)/2 degree two equations corresponding to the free variables $a_{j}$ which remain free
-in solving the linear system.
+are given by the free $a_{j}$ that are not fixed in the outline result from Solve[l==....], 
+in particular we obtain exactly $(g-2)(g-3)/2$ degree two equations corresponding to the free variables $a_{j}$ which remain free
+in solving the linear system (this is enough to obtain the canonical model for non-hyperelliptic quotient curves of genus $>3$ 
+if such quotient curve is not a smooth quintic plane curve or a trigonal curve).
 
-Now because no repeated factor in the Jacobian decomposition over the rationals
+
+Let us now go to determine the automorphism group for the quotient modular curve.
+
+Because no repeated factor in the Jacobian decomposition over the rationals
 all automorphism over the rationals are involutions acting as +1 or +1 in each factor from the 
 Q-decomposition of the abelian variety, thus need to check if
-any $x1\mapsto \pm x1$, $x2\mapsto\pm x2$, $x3\mapsto \pm x3$, $(x_4,x5)\mapto \pm (x_4,x_5)$,
+any $x1\mapsto \pm x1$, $x2\mapsto\pm x2$, $x3\mapsto \pm x3$, $(x_4,x5)\mapsto \pm (x_4,x_5)$,
 $x6\mapsto \pm x6$, $(x7,x8)\mapsto\pm (x7,x8)$, $x9\mapsto \pm x9$ and $x10\mapsto x10$.
 
 All these, are the all possible involutions, and need to check if keep invariant the canonical
@@ -260,7 +264,7 @@ QQ1 = (QQ - (QQ /. {x1 -> x1, x2 -> x2, x3 -> x3, x4 -> x4, x5 -> x5,
 QQ1 /. {x1 -> h1, x2 -> h2, x3 -> h3, x4 -> h4, x5 -> h5, x6 -> h6, 
    x7 -> h7, x8 -> h8, x9 -> h9, x10 -> h10};
 
-````
+````````
 
 running all the situations, for example we reach an involution in the following
 situation
@@ -274,11 +278,12 @@ QQ1 = (QQ - (QQ /. {x1 -> x1, x2 -> x2, x3 -> x3, x4 -> x4, x5 -> x5,
 QQ1 /. {x1 -> h1, x2 -> h2, x3 -> h3, x4 -> h4, x5 -> h5, x6 -> h6, 
   x7 -> h7, x8 -> h8, x9 -> h9, x10 -> h10}
 
-`````
+`````````
 
-the output is $O[q]^{57}$, therefore here QQ1 is zero, therefore we obtain an involution.
+the output is $O[q]^{57}$, therefore here we obtain that QQ1 is zero, therefore we obtain an involution.
 
-Running all the situations, we get involutions the above one and the next two situations:
+Running all the possible situations (recall that only need to check action of $\pm 1$ in the variables of the canonical model obtained, 
+we get all the involutions for the modular curves, one is the above involutions and there are exactly two more:
 
 
 ````mathematica
@@ -296,9 +301,11 @@ QQ1 = (QQ - (QQ /. {x1 -> -x1, x2 -> x2, x3 -> -x3, x4 -> x4,
 QQ1 /. {x1 -> h1, x2 -> h2, x3 -> h3, x4 -> h4, x5 -> h5, x6 -> h6, 
   x7 -> h7, x8 -> h8, x9 -> h9, x10 -> h10}
 
-`````
+`````````````
 
-Thus see the file xzerow6w10w15.nb for all the computations, to conclude that all automorphism
-over Q are $C_2\times C_2$. Because 210 square-free all automorphism are rational, thus
-in this case we obtain all the automorphism group for such quotient curve.
+Thus see the file xzerow6w10w15.nb for all the computations (and the checking for all situations that needed).
+Finally, we can conclude that all automorphism
+over $\mathbb{Q}$ of the quotient curve $X_0(210)/\langle w_6,w_{10},w_{15}\rangle$ are $C_2\times C_2$. Because 210 is square-free, we have that all automorphism of the quotient curve are rational, thus
+in this case we obtain all the automorphism group for such quotient modular curve.
+
 
