@@ -23,7 +23,7 @@ F:=[(B[1] - B[7] + B[10]),
     (B[5] + 2*B[7] + 2*B[8] - 2*B[9] - B[10] + 2*B[11]),
     (B[6] - B[7] - B[8] + B[9])];
 ````````````````
-F gives a basis for the space $(S_2(115))^{\langle w_{23}\rangle}$
+F gives a basis for the space $(S_2(115))^{\langle w_{23}\rangle}$. We now use these basis to construct a model for $X_0(115)/\langle w_{23}\rangle$ via Petri's theorem.
 ````magma
 
 prec:=200;
@@ -43,6 +43,9 @@ tf:=false;
 		K:=Kernel(h);
 		eqns:=eqns cat [ &+[Eltseq(V!k)[j]*mons[j] : j in [1..#mons] ] : k in Basis(K)  ];
 		X:=Scheme(ProjectiveSpace(R),eqns);
+````
+Here we get a collection of equations which may represents the curve $X_0(115)/\langle w_{23}\rangle$. We now find the suitable set of generators of the definiting equations of $X_0(115)/\langle w_{23}\rangle$.
+````magma
 		if Dimension(X) eq 1 then
 			if IsSingular(X) eq false then
 				X:=Curve(ProjectiveSpace(R),eqns);
@@ -81,6 +84,9 @@ t:=0;
 	until tf eq false and t eq #eqns;
 X:=Curve(ProjectiveSpace(R),eqns);
 //X;
+````
+Here we get a suitable set of generators of the definiting equations of $X_0(115)/\langle w_{23}\rangle$. We now compute the order of its automorphism group over the field $F_2$ ($F_2$ denotes the field with 2 elements).
+````magma
 
 
 
