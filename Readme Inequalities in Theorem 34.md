@@ -623,7 +623,7 @@ if d2 gt d1 then
 if d1 ne d2 then
 TN2:=[*d1,d2,Squarefreepart(d1*d2),1*];
 ````
-Suppose W is genered by two elements $w_{d1},w_{d2}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}\circ w_{d}=1$, we have $W=<1,w_{d1},w{d2},w_{Squarefreepart(d1\circ d2)}>$.  
+Suppose W is genered by two elements $w_{d1},w_{d2}$. Since $w_{d}$ and $w_{d^\prime}$ commutes when $(d,d^\prime)=1$ and $w_{d}\circ w_{d}=1$, we have $W=<1,w_{d1},w{d2},w_{Squarefreepart(d1\cdot d2)}>$. Hence ``TN:=[1,d1,d2,Squarefreepart(d1*d2)]``.  
 ````magma
 t2:=#TN2;
 A12:=genereX0NQuotientWN(q*M,TN2,t2);
