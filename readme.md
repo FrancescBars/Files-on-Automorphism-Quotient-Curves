@@ -1,11 +1,11 @@
-First we explain how to obtain the canonical model by the Petri model over rational field
- from the basis of modular forms
-for quotient curves (this base of the modular forms for a quotient curve is obtained
-by the use Magma code that you can find in another folder
-in this github).
+We explain in this readme.md file, by a concrete example, how in the files .nb of the folder we obtain the canonical model by use of the theorem of Petri and compute the automorphism group.
+
+First, we take the list of modular forms
+for $C$ a concrete quotient curve of level $N$, each modular forms correspond to an abelian variety factor in the $\mathbb{Q}$-isogeny decomposition of the jacobian of $C$ (this list of modular forms for a quotient curve $C$ is obtained by the use of a Magma code that you can find in another folder
+in this github). After, we obtain a basis of the differential forms of $C$ over the rationals, for this we need to lift the above modular forms to modular forms at level $N$ and also with rational coefficients. Once we obtain such basis, we can apply linear algebra to obtain the canonical model (by use of Petri theorem).
 
 Secondly we explain the method in order to reach all involutions over the rational field for a quotient modular
-curve which does not have any repeated factor in the Jacobian decomposition.
+curve which does not have any repeated factor in the Jacobian decomposition (once we have already the equations of the canonical model in a concrete way which the variables of the equations are choise related with the $\mathbb{Q}$-isogeny factors of the Jacobian decomposition of $C$).
 
 For few concrete non-hyperelliptic quotient modular curve
 $C:=X_0(N)/W_N$ that we used in the paper on automorphisms of quotient modular curve
