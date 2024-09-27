@@ -1,10 +1,10 @@
-Here we provide magma code with explanation conerning obtain inequalities on proving Theorem 32 in the paper ``On automorphisms of quotient modular curves".
+Here we provide Magma code with explanation for computing the values of (q,M,W) that satisfies the inequalities (5.46),(5.47) and (5.48) in Theorem 34 (i.e., for the case $n=2$ and $q=2$) in the paper ``On automorphisms of quotient modular curves". The explanations of the Magma codes used for checking the other inequalities in Theorem 34 are very similar to this.
 
-We make such details for the case $q=2$ and $n=2$ in a readme file.
+
 
 ##Example 
 
-First we pick different functions on computing fixed points already available in another folder in this github.
+First we pick different functions for computing the genus of a quotient modular curve (such Magma codes are already available in another folder in this github).
 
 ````magma
 
