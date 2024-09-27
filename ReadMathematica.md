@@ -1,5 +1,4 @@
-Here we present a direct way by use of Magma to compute a canonical model for a quotient modular curve
-and after having it, call to the Automorphism instruction on Magma in order to compute its automorphism group.
+Here we present a direct way for computing a canonical model for a quotient modular curve using Magma. Then we use the model to compute the order of automorphism group over finite field. Note that the modular form we use here to compute the canonical models may not appear in the Jacobian decomposition over \mathbb{Q} (whereas the modular forms we used to construct the canonical models in Mathematica files, appear in the Jacobian decomposition over \mathbb{Q}).
 
 We deal this with the example of $X_0(115)/\langle w_{23}\rangle$.
 
