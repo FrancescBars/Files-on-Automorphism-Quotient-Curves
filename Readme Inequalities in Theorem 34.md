@@ -10,7 +10,7 @@ Then we check the inequalities (5.46), (5.47) and (5.48)  case by case i.e., fir
 
 
 
-##Example 
+#Example 
 
 First we pick different functions for computing the genus of a quotient modular curve (such Magma codes are already available in another folder in this github).
 
