@@ -647,7 +647,7 @@ This checks the values of M,W with order(W)=4 which satisfy the inequality (5.46
 ````magma
 E:=[d1,d2,Squarefreepart(d1*d2)];
 ````
-The value E, we just got satisfies the inequalities (5.46), (5.47) and (5.48) with order(W)=4 and W=$< 1,w_{d1},w_{d2},w_{Squarefreepart(d1\cdot d2)} >$. We now find some suitable generators of W. Note that if e1:=min({d1,d2,Squarefreepart($d1\cdot d2$)}) and e2:=min({d1,d2,Squarefreepart($d1\cdot d2$)}\\ {e1}), then $w_{e1}$ and $w_{e2}$ generate $W$.
+The value E, we just got satisfies the inequalities (5.46), (5.47) and (5.48) with order(W)=4 and W=$<1,w_{d1},w_{d2},w_{Squarefreepart(d1\cdot d2)}>$. We now find some suitable generators of W. Note that if e1:=min({d1,d2,Squarefreepart($d1\cdot d2$)}) and e2:=min({d1,d2,Squarefreepart($d1\cdot d2$)}\\ {e1}), then $w_{e1}$ and $w_{e2}$ generate $W$.
 ````magma
 e1:=Minimum(E);
 E1:=Exclude(E,e1);
