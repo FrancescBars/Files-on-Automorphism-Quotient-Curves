@@ -12,7 +12,7 @@ Then we check the inequalities (5.46), (5.47) and (5.48)  case by case i.e., fir
 
 ##Example 
 
-First we pick different functions for computing the genus of a quotient modular curve (such Magma codes are already available in another folder in this github).
+First we pick different functions for computing the genus of a quotient modular curve (such Magma codes are already available in another folder in this github for example see \url{https://github.com/FrancescBars/Magma-functions-on-Quotient-Modular-Curves}).
 
 ````magma
 
