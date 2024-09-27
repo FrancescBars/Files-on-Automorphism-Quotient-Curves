@@ -399,7 +399,7 @@ return M;
 
 end function;
 ````
-The command ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2]`` gives the modular forms with q-expansion that are factor of the Jacobian, (could appear repeated if some factor of the Jacobian can appeared repeated), here N is square-free, `TN:=[d | w_d belongs to W]`` and ``t:=#TN`` as explained before.
+The command ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2]`` gives the modular forms with q-expansion that are factor of the Jacobian, (could appear repeated if some factor of the Jacobian can appeared repeated), here N is square-free, ``TN:=[d | w_d belongs to W]`` and ``t:=#TN`` as explained before.
 The command ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[3]`` gives the number fields of the list of modular forms given in ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2]``, the order is the same.
 ````magma
 
@@ -482,7 +482,7 @@ end for;
 return PR;
 end function;
 ````
-The command ``FpnpointsforQuotientcurveX0NWN(N,p,JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2],JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[3],bound)`` gives the number of $\mathbb{F}_{p^n}$-points for the modular curve X_0(N)/W for n=1 until bound, and $p$ is a prime with $p\nmid N$.
+The command ``FpnpointsQuotientCurve:=FpnpointsforQuotientcurveX0NWN(N,q,JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2],JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[3],bound)`` gives the number of $\mathbb{F}_{q^n}$-points for the modular curve $X_0(N)/W$ for n=1 until bound, and $q$ is a prime with $p\nmid N$.
 ````magma
 
 
@@ -531,6 +531,9 @@ end for;
 return NoDegreeMaptosuchP1;
 
 end function;
+````
+The command ``MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve)`` list if any of the set $(q^k, z)$ with $k<\mathrm{bound}$ such that $|X_0(N)/W(\mathbb{F}_{q^k})|-degree*|\mathbb{P}^1(\mathbb{F}_{q^k})|=z$, where z is a positive integer. Thus no $degree$ map between the quotient modular curve $X_0(N)/W$ to the projective space $\mathbb{P}^1$ defined over $\mathbb{F}_{q^k}$, if the list is non empty (recall q does not divide N).
+````magma
 Squarefreepart:=function(Integer)
 
 n:=Integer;
