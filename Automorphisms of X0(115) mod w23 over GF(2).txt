@@ -1,3 +1,4 @@
+//In this Magma program we first construct a suitable canonical model for the curve X_0(115)/w_23 and then compute the order of its automorphism group over F_2.
 M := ModularForms(115,2);
 S := CuspidalSubspace(M);
 //Dimension(S);
