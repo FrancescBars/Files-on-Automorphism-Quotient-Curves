@@ -95,4 +95,4 @@ if IsSingular(Y) eq false then
 #Automorphisms(Y);
 end if;
 ````````````````
-This gives the order of automorphism group*****
+This gives the order of automorphism group over $F_2$.
