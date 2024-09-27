@@ -526,7 +526,7 @@ return NoDegreeMaptosuchP1;
 end function;
 ````
 The command ``MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve)`` list if any of the set $(q^k, z)$ with $k<\mathrm{bound}$ such that
-$|X_0(N)/W (F_{q^k})|-degree |\mathbb{P}^1 (F_{q^k})|=z$,
+$|X_0(N)/W (F_{q^k})|-degree \cdot |\mathbb{P}^1 (F_{q^k})|=z$,
 where z is a positive integer ($F_{q^k}$ denotes the field with $q^k$ elements). Thus no $degree$ map between the quotient modular curve $X_0(N)/W$ to the projective space $\mathbb{P}^1$ defined over $(F_{q^k})$, if the list is non empty (recall q is a prime not dividing N).
 ````magma
 Squarefreepart:=function(Integer)
