@@ -398,6 +398,10 @@ M:=[*CorrectJacobian,L,F,Level, ALaction*];
 return M;
 
 end function;
+````
+The command ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2]`` gives the modular forms with q-expansion that are factor of the Jacobian, (could appear repeated if some factor of the Jacobian can appeared repeated), here N is square-free, `TN:=[d | w_d belongs to W]`` and ``t:=#TN`` as explained before.
+The command ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[3]`` gives the number fields of the list of modular forms given in ``JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2]``, the order is the same.
+````magma
 
 
 FpnpointsforQuotientcurveX0NWN:=function(N,prime,JacDecomp,FieldDefinition,bound);
@@ -477,6 +481,10 @@ end for;
 
 return PR;
 end function;
+````
+The command ``FpnpointsforQuotientcurveX0NWN(N,p,JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[2],JacobianDecompositionQuotientX0NWN(N, TN, prec, t)[3],bound)`` gives the number of $\mathbb{F}_{p^n}$-points for the modular curve X_0(N)/W for n=1 until bound, and $p$ is a prime with $p\nmid N$.
+````magma
+
 
 
 MapdegreedtoP1:=function(prime,degree,bound,FpNpointsModularCurveList)
