@@ -2,6 +2,8 @@ Here we provide magma code with explanation conerning obtain inequalities on pro
 
 We make such details for the case $q=2$ and $n=2$ in a readme file.
 
+##Example 
+
 ````magma
 
 fixedpointsALinvsmall:=function(m, n)
