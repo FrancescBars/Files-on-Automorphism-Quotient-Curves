@@ -665,7 +665,9 @@ end if;
 end for;
 end if;
 end if;
-
+````
+A1 collects the values of M,W with $order(W)\in \{2,4\}$ which satisfy the inequalities (5.46), (5.47) and (5.48). We now repeat the same process for order(W)=8.
+````magma
 if #PrimeFactors(M) in [3..4] then
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (8*n*(q^2+1)) then
 for d1 in Divisors(M) do
