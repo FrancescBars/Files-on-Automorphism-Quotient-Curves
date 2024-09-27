@@ -92,6 +92,9 @@ Here we get a suitable set of generators of the definiting equations of $X_0(115
 
 Y:=ChangeRing(X,GF(2));
 if IsSingular(Y) eq false then
+````
+This command verifies that the canonical model we construct is a good model over $F_2$.
+````magma
 #Automorphisms(Y);
 end if;
 ````````````````
