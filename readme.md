@@ -15,7 +15,7 @@ involution or not. The usual notation for the file corresponding to
 $C$ is NW_N+some details.nb The mathematica code was running in
 Mathematica
 
-##Examples
+##Example
 
 -Quotient curve $X_0(210)/\angle w_6, w_{10},w_{15}\rangle$.
 
