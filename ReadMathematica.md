@@ -23,7 +23,7 @@ F:=[(B[1] - B[7] + B[10]),
     (B[5] + 2*B[7] + 2*B[8] - 2*B[9] - B[10] + 2*B[11]),
     (B[6] - B[7] - B[8] + B[9])];
 ````````````````
-This computes the modular forms for S_2(115)/<w_{23}>
+F gives a basis for the space $S_2(115)/<w_{23}>$
 ````magma
 
 prec:=200;
