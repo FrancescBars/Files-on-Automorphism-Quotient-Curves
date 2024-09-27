@@ -534,7 +534,7 @@ end function;
 ````
 The command ``MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve)`` list if any of the set $(q^k, z)$ with $k<\mathrm{bound}$ such that
 $|X_0(N)/W(\mathbb{F}_{q^k})|-degree*|\mathbb{P}^1(\mathbb{F}_{q^k})|=z$,
-where z is a positive integer. Thus no $degree$ map between the quotient modular curve $X_0(N)/W$ to the projective space $\mathbb{P}^1$ defined over $\mathbb{F}_{q^k}$, if the list is non empty (recall q does not divide N).
+where z is a positive integer. Thus no $degree$ map between the quotient modular curve $X_0(N)/W$ to the projective space $\mathbb{P}^1$ defined over $\mathbb{F}_{q^k}$, if the list is non empty (recall q is a prime not dividing N).
 ````magma
 Squarefreepart:=function(Integer)
 
@@ -550,24 +550,40 @@ end for;
 return n;
 
 end function;
+````
+The command ``Squarefreepart(d)`` gives the squarefree part of a natural number ``d``. 
+We are now ready to check the inequalitites (5.46),(5.47) and (5.48). We first check the inequalities for order(W)=2.
+````magma
 
 A1:=[ ];
-q:=2;
+q:=2;//recall that we are assuming q=2 and n=2
 n:=2;
+````
+Recall that that we are cosidering the case q=2 and n=2
+````magma
 for M in [2..870] do
+````
+Recall that we only need to check the inequalities for M<865 (with q*M squarefree and M can have at most 3 distinct prime factors, however we check this upto the case when M has at most 4 distinct prime factors)
+````magma
 if IsSquarefree(q*M) eq true then
 
 if #PrimeFactors(M) le 4 then
 
 if ((q-1)*(SumOfDivisors(M)/12) +2^(#PrimeFactors(M))) le (2*n*(q^2+1)) then
+````
+This checkes values of M which satisfies the inequality (5.47) with s=order(W)=2 (recall that q=2 and n=2).
+````magma
 for d in Divisors(M) do
 if d gt 1 then 
-TN1:=[*d,1*];
+TN1:=[*d,1*];//here we are checking the cases with order(W)=2
 t1:=#TN1;
-A11:=genereX0NQuotientWN(q*M,TN1,t1);
+A11:=genereX0NQuotientWN(q*M,TN1,t1);//this computes the genus of X_0(qM)
 B11:=genereX0NQuotientWN(M,TN1,t1);
-if A11 ge 2 then
+if A11 ge 2 then//recall that we are assuming genus(X_0(N)/W)>1
 if (A11-1) ge (n*(A11-1-(2*B11))) then
+````
+This checkes the values of M and W with order(W)=2 that satisfy the inequality (5.48)
+````magma
 prec := 20; // Number of coefficients of the q-expansion
 HH1 := JacobianDecompositionQuotientX0NWN(M, TN1, prec, t1);
 //p:=2;// A prime number not dividing the level N
@@ -576,9 +592,12 @@ FpnpointsQuotientCurve:=FpnpointsforQuotientcurveX0NWN(M,q,HH1[2],HH1[3],bound);
 //print FpnpointsQuotientCurve;
 degree:=n;
 NondegreedmaptoP1:=MapdegreedtoP1(q,degree,bound,FpnpointsQuotientCurve);
-// The command NondegreedmaptoP1 list if any of the set (q^k, z) k<bound such that |X_0(M)/W(F_{q^n})|-degree*|P^1(F_{q^k})|=z, where z is a positive integer. Thus no degree map between the quotient modular curve X_0(M)/W to the projective space P^1 defined over F_{q^k}, if the list is non empty, recall q does not divide M.
+// The command NondegreedmaptoP1 list if any of the set (q^k, z) k<bound such that |X_0(M)/W(F_{q^k})|-degree*|P^1(F_{q^k})|=z, where z is a positive integer. Thus no degree map between the quotient modular curve X_0(M)/W to the projective space P^1 defined over F_{q^k}, if the list is non empty, recall q is a prime not dividing M.
 
-if #NondegreedmaptoP1 eq 0 then
+if #NondegreedmaptoP1 eq 0 then\\ This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with \alpha<bound=20
+````
+This checks the values of M,W with order(W)=2 which satisfy the inequality (5.46) with \alpha<bound=20
+````magma
 if [q,M,d] notin A1 then
 A1:=Append(A1,[q,M,d]);
 end if;
